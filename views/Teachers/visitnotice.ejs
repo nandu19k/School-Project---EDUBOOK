@@ -1,0 +1,24 @@
+<h1>
+	ALL THE NOTICES
+</h1>
+
+<div>
+	<%notice.forEach(function(notices){%>
+     <h2>
+  	     TITLE: <%=notices.title%>	 
+     </h2>
+     <h3>
+		CLASS: <%=notices.class%>
+     </h3>
+	<h4>
+		FROM: <%=notices.from%>
+	</h4>
+     <h4>
+		DATE: <%=notices.created.toDateString()%>
+     </h4>
+     <p>
+		BODY: <%=notices.body.substring(0,50)%>  <strong>.......</strong>
+     </p>
+	<a href="/adminnotice/<%=notices._id%>">READ MORE</a>
+<%});%>
+</div>

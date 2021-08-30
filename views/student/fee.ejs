@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <meta charset="UTF-8">
+  <meta name="EDUBOOK" content="SCHOOL PARENT TEACHER INTERACTION PLATFORM">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="TEAM ALA" content="TEAM ALA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body{
+				background: #525252;  /* fallback for old browsers */
+              background: -webkit-linear-gradient(to right, #3d72b4, #525252);  /* Chrome 10-25, Safari 5.1-6 */
+               background: linear-gradient(to right, #3d72b4, #525252); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+				text-align:center;
+				padding-top:90px;
+				padding-left:10px;
+				padding-right:10px;
+			}
+			.sign
+	{  
+		background:red;
+		border-radius: .25rem;
+		 padding: .155rem .35rem;
+		font-size: 1rem;
+       line-height: 1.5;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+		margin-bottom:40px;
+		float:left;
+		margin-left:10px;
+		}
+			.back
+	{
+		color:#fff;
+		background-color:#28a745;
+		border-color:#28a745;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .275rem 1.39rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		margin-bottom:5px;
+	}
+			a{
+				text-decoration:none;
+				color:darkblue;
+				
+			}
+			a:hover{
+				text-decoration:underline red;
+			}
+			.table
+	{
+		display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 3px;
+		text-align:center;
+		margin-left:auto; 
+  margin-right:auto;
+		margin-top:40px;
+	}
+			table{
+				border:1px solid ;
+			}
+	td {
+  border: 1px solid yellow ;
+		padding:4px;
+		color:darkblue;
+}
+			th{
+	             border:1px solid ;
+				padding:3px;
+			}
+			h1{
+				margin-top:90px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<form action="/logout" method="POST">
+          <button class="sign">Sign Out</button>
+</form>
+	<h1 style="text-align:center">
+	THE FEE DETAILS OF <%=student.name%>
+    </h1>
+        <button class='back'>
+	        <a href="/dashboard">DASHBOARD</a>
+		</button>
+
+
+<div style="text-align:center;margin-top:20px">
+	<table class='table'>
+	<tr>
+		<th>
+			TOTAL FEES
+		</th>
+		<td><%=student.fees%></td>
+		
+	</tr>
+	<tr>
+		<th>PAID FEES</th>
+		<td><%=student.paidfees%></td>
+		
+	</tr>
+	<tr>
+		<th>TO BE PAID FEES</th>
+		<td><%=student.tobepaid%></td>
+	</tr>
+    </table>
+</div>
+		<p style='font-size:1em;margin-top:30px;'>
+			*If any detail is wrong Please contact the admin
+		</p>
+	</body>
+</html>
+

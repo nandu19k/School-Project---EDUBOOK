@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  <meta charset="UTF-8">
+  <meta name="EDUBOOK" content="SCHOOL PARENT TEACHER INTERACTION PLATFORM">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="TEAM ALA" content="TEAM ALA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body{
+				background: #8E0E00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+				padding-top:60px;
+				padding-left:10px;
+				padding-right:10px;
+				text-align:center;
+				
+			}
+		   .sign
+	{  
+		background:red;
+		border-radius: .25rem;
+		 padding: .375rem .75rem;
+		font-size: 1rem;
+       line-height: 1.5;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+		float:right;
+	}
+	.back
+	{
+		color:#fff;
+		background-color:#28a745;
+		border-color:#28a745;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .375rem .75rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		float:left;
+	}
+			h1{
+				margin-top:100px;
+			}
+			a{
+   background-color: none;
+   text-decoration:none;
+  } 
+			.table
+	{
+		display: table;
+		
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+		margin-left:auto; 
+  margin-right:auto;
+	}
+	
+	table {
+  border: 1.5px solid ;
+}
+			td{
+				border: .5px solid brown ;
+			}
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
+}
+			.edit{
+	background:grey;
+    color:red;
+	margin-bottom:0px;
+	}
+	.edit:hover
+	{
+		background:white;
+	}
+			tr:nth-child(even) {
+  background-color:grey;
+}
+			tr:nth-child(odd){background-color:#fff;}
+			h1{
+				color:green;
+				font-family:serif;
+				text-shadow: 2px 2px 5px yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="/logout" method="POST">
+          <button class="sign">Sign Out</button>
+    </form>
+		<button type='button' class='back'>
+			<a style='color:#fff;' href="/dashboard">Back</a>
+		</button>
+		<br>
+	<h1>
+		DETAILS
+    </h1>
+		<div style='margin-left:30px;margin-right:30px;'>
+			<table class='table'>
+	<tr>
+		<td>NAME:</td>
+		<td><%=student.name%></td>
+	</tr>
+	<tr>
+		<td>CLASS:</td>
+		<td><%=student.class%></td>
+	</tr>
+	<tr>
+		<td>D.O.B:</td>
+		<td><%=student.dob%></td>
+	</tr>
+		  <tr>
+			  <td>FATHER NAME:</td>
+			  <td><%=student.f_name%></td>
+		  </tr>
+		  <tr>
+			  <td>MOTHER NAME:</td>
+			  <td><%=student.m_name%></td>
+		  </tr>
+		<tr>
+			<td>CONTACT NUMBER:</td>
+			<td><%=student.contact_no%></td>
+		</tr>
+		
+	</table>
+		</div>
+<br>
+<br>
+		<p style='color:yellow'>
+			IF ANY WRONG INFORMATION IS THERE PLEASE INFORM TO ADMIN
+		</p>
+	</body>
+</html>

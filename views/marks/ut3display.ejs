@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  <meta charset="UTF-8">
+  <meta name="EDUBOOK" content="SCHOOL PARENT TEACHER INTERACTION PLATFORM">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="TEAM ALA" content="TEAM ALA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+ body{text-align:left; 
+	background-image: url('https://coolbackgrounds.io/images/backgrounds/blue/blue-trianglify-8e4a0501.jpg');
+    background-size: 550%;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 20px; 
+ }
+	button{
+		background:rgb(300,300,300);
+	}
+
+	.edit{
+	background:rgb(100,250,80);
+    color:red;
+	margin-bottom:10px;
+	}
+	.edit:hover
+	{
+		background:rgb(10,300,10);
+	}
+	.sign
+	{  
+		background:red;
+		border-radius: .25rem;
+		 padding: .375rem .75rem;
+		font-size: 1rem;
+       line-height: 1.5;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+	}
+	.back
+	{
+		color:#fff;
+		background-color:#28a745;
+		border-color:#28a745;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .375rem .75rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s
+	}
+	.test
+	{
+		color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+	display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: center;
+	user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s
+	}
+	a{
+   background-color: none;
+   text-decoration:none;
+  } 
+	.table
+	{
+		display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+		text-align:center;
+		margin-left:auto; 
+  margin-right:auto
+	}
+	
+	table, th, td {
+  border: 1.5px solid ;
+}
+</style>
+		
+</head>
+    <body>
+		<form action="/log-out" method="POST">
+			<button class="sign"> SignOut</button> 
+		</form>
+		<br>
+		<button type="button" class="back">
+			<a style="color:#fff;" href="/class<%=id.class%>">Back</a>
+		</button>
+<br>   
+<br>
+<div>
+	<div>
+		<button type="button" class="test">
+			<a style="color:#fff;" href="/ut1/<%=id._id%>">UNIT TEST 1</a>
+		</button>
+	
+</div>
+<br>
+<div>
+	<button type="button" class="test">
+			<a  style="color:#fff;" href="/ut2/<%=id._id%>">UNIT TEST 2</a>
+	</button>
+	
+</div>
+<br>
+<div>
+	<button type="button" class="test">
+			<a style="color:#fff;" href="/ut4/<%=id._id%>">UNIT TEST 4</a>
+	</button>
+	
+</div>
+<br>
+<div>
+	<button type="button" class="test">
+			<a style="color:#fff;" href="/sa1/<%=id._id%>">SUMMATIVE ASSESMENT 1</a>
+	</button>
+	
+</div>
+<br>
+<div>
+	<button type="button" class="test">
+			<a style="color:#fff;" href="/sa2/<%=id._id%>">SUMMATIVE ASSESMENT 2</a>
+	</button>
+	
+</div>
+		</div>
+<br>
+<div>
+	<p>*EMPTY INDICATES MARKS ARE TO BE UPLOADED BY THE RESPECTIVE TEACHER</p>
+<h1 style="text-align:center;">
+	UNIT TEST-3 MARKS OF <%=id.name%>
+	
+</h1>
+<div style="overflow-x:auto;">
+	 <table class="table">
+	 <tr>
+		<th>TELUGU</th>
+		<th>HINDI</th>
+		<th>ENGLISH</th>
+		<th>MATHS</th>
+		<th>SCIENCE</th>
+		<th>SOCIAL</th>
+		<th>COMPUTER</th>
+	</tr> 
+<%id.u_t_3.forEach(function(ut1){%>
+	 <button class='edit'>
+		 <a class='edit' href="/ut3/<%=id._id%>/<%=ut1._id%>/edit">EDIT MARKS</a>
+	 </button>
+	
+	<tr>
+		<th><%=ut1.telugu%></th>
+		<th><%=ut1.hindi%></th>
+		<th><%=ut1.english%></th>
+		<th><%=ut1.maths%></th>
+		<th><%=ut1.science%></th>
+		<th><%=ut1.social%></th>
+	    <th><%=ut1.computer%></th>
+	</tr>
+		
+</table>
+<%})%>
+</div>
+		</div>
+<br>
+		<br>
+		<p>
+			PLEASE SCROLL LEFT IN TABLE TO SEE ALL THE SUBJECTS 
+			<br>
+			*If Using Mobile
+		</p>
+	</body>
+</html>
+

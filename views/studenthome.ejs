@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="EDUBOOK" content="SCHOOL PARENT TEACHER INTERACTION PLATFORM">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="TEAM ALA" content="TEAM ALA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel='stylesheet' href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js'></script>
+		<script>
+			$(document).ready( function () {
+                 $('#noticetable').DataTable({
+					 "order": [[ 0, "desc" ]]
+				 });
+            } );
+		</script>
+	<style>
+	body {background: #136a8a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		text-align:center;
+				padding-top:60px;
+				padding-left:30px;
+				padding-right:30px;
+				padding-bottom:30px;
+		}
+		div.notice{
+			    text-align:left;
+				overflow:auto;
+				margin-top:70px;
+			}
+			
+	.table
+	{
+		display: table;
+	   margin-left:auto; 
+       margin-right:auto;
+	}
+			.sign
+	{  
+		background:red;
+		border-radius: .25rem;
+		 padding: .155rem .35rem;
+		font-size: 1rem;
+       line-height: 1.5;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+		margin-bottom:40px;
+		float:left;
+		}
+			.back
+	{
+		color:#fff;
+		background-color:violet;
+		border-color:violet;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .275rem .80rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		
+	}
+			.show
+	{
+		color:#fff;
+		background-color:#28a745;
+		border-color:#28a745;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .275rem 1.39rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		margin-bottom:5px;
+	}
+	 table.dataTable{
+				border: 1px solid blue;
+		         margin-top:15px;
+		 } 
+	 th{
+		 text-align:center;
+		 font-size:400;
+         border:1.5px solid;
+       }
+			td {
+          border: 1.5px solid ;
+          text-align:left;
+       }
+			
+     table.dataTable tr:nth-child(even) {
+          background-color: lightpink;
+       }
+			
+			a{
+				text-decoration:none;
+				color:darkblue;
+				
+			}
+			a:hover{
+				text-decoration:underline green;
+			}
+	</style>
+</head>
+<Body>
+	<h2>
+			WELCOME TO THE STUDENT PAGE <%=student.name%>
+	</h2>
+	<div style='text-align:left;'>
+		<form action="/video1" mehtod="GET" class="d-inline">
+			<button class="show">Videos</button>
+		</form>
+		<form action="/dashboard" method="get">
+	    <button class='back'>
+		DASHBOARD
+	    </button>
+        </form>
+		<br>
+		<form action="/logout" method="POST">
+          <button class="sign">Sign Out</button>
+        </form>
+	</div>
+	
+	<br>
+	<div class='notice'>
+	<h4 style='text-align:center;'>
+	NOTICE BOARD
+		</h4>
+	<table class="table" id='noticetable'>
+	
+		<thead>
+		    <td>Date</td>
+			<td>Notice Details</td>			
+		</thead>
+		<tbody>
+		<%notice.forEach(function(notices){%>
+		<tr>
+			<td><%=notices.created.getFullYear()%>-<%=notices.created.getMonth()+1%>-<%=notices.created.getDate()%></td>
+			<td>
+				Title:<%=notices.title%>
+				<br>
+				From:<%=notices.from%>
+				<br>
+				To class:<%=notices.class%>				
+				<br>
+				Body:<%=notices.body.substring(0,50)%>  <strong>.......</strong>
+				<br>
+				<a style='color:red' href="/studentnotice/<%=notices._id%>">READ MORE</a>
+			</td>
+		</tr>
+		<%});%>
+		</tbody>
+	</table>
+</div>
+</Body>
+</html>

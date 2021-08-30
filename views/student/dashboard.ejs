@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  <meta charset="UTF-8">
+  <meta name="EDUBOOK" content="SCHOOL PARENT TEACHER INTERACTION PLATFORM">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="TEAM ALA" content="TEAM ALA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			body{
+				background: #BA8B02;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #181818, #BA8B02);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #181818, #BA8B02); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding-top:20px;
+			padding-left:10px;
+			padding-right:10px;
+			}
+			.mySlides {display:none;}
+			 .sign
+	{  
+		background:red;
+		border-radius: .25rem;
+		 padding: .155rem .35rem;
+		font-size: 1rem;
+       line-height: 1.5;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+		margin-bottom:40px;
+		float:left;
+		margin-left:10px;
+		}
+			.back
+	{
+		color:#fff;
+		background-color:#28a745;
+		border-color:#28a745;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .155rem .35rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		float:left;
+		margin-left:10px;
+	}
+			.fees
+	{
+		color:#fff;
+		background-color:violet;
+		border-color:violet;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .155rem .35rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		float:left;
+		margin-left:15px;
+	}
+			.details
+	{
+		color:#fff;
+		background-color:blue;
+		border-color:blue;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .155rem .35rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		float:left;
+		margin-left:15px;
+	}
+			.home
+	{
+		color:#fff;
+		background-color:orange;
+		border-color:orange;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .155rem .35rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		float:left;
+		margin-left:15px;
+	}
+			a{
+				text-decoration:none;
+				
+			}
+			a:hover{
+				text-decoration:underline green;
+			}
+		</style>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body>
+		<form action="/logout" method="POST">
+          <button class="sign">Sign Out</button>
+        </form>
+		<div class="w3-content w3-section" style="max-width:650px;">
+			<img class='mySlides' src='https://cdn.everydaypower.com/wp-content/uploads/2019/05/thoughtful-quotes-about-education.jpg' style="width:100%">
+			<img class='mySlides' src='https://cdn.everydaypower.com/wp-content/uploads/2019/05/education-quotes-about-future.jpg' style="width:100%">
+			<img class='mySlides' src='https://cdn.everydaypower.com/wp-content/uploads/2019/05/education-quotes-to-motivate-you.jpg' style="width:100%">
+		</div>
+		<script>
+		        var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+		</script>
+<div style='display:inline;'>
+	
+		<button class='home'>
+			<a href="/">HOME</a>
+		</button>
+	
+    
+    <form action="/Sut1/<%=student._id%>" method="get">
+	<button class='back'>
+		MARKS
+	</button>
+    </form>
+	
+    <form action="/fees/<%=student._id%>" method="get">
+	<button class='fees'>
+		FEES
+	</button>
+    </form>
+
+	<button class='details'>
+		<a href="/Sviewdetails/<%=student._id%>">DETAILS</a>
+	</button>
+	
+</div>
+	</body>
+</html>
+
+
+
+

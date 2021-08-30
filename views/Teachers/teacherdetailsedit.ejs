@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+  <meta name="EDUBOOK" content="SCHOOL PARENT TEACHER INTERACTION PLATFORM">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="TEAM ALA" content="TEAM ALA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body{
+				             background: #003973;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+                 background-size:cover;
+			    text-align:center;
+				padding-top:90px;
+				padding-left:60px;
+				padding-right:60px;
+				padding-bottom:0px;
+				
+			} 
+			        .sign
+	{  
+		background:red;
+		border-radius: .25rem;
+		 padding: .375rem .75rem;
+		font-size: 1rem;
+       line-height: 1.5;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+		float:right;
+		
+	}
+	.back
+	{
+		color:#fff;
+		background-color:#28a745;
+		border-color:#28a745;
+		display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+		border: 1px solid transparent;
+        padding: .375rem .75rem;
+       font-size: 1rem;
+       line-height: 1.5;
+       border-radius: .25rem;
+        transition: color .15s;
+		float:left;
+	}
+			a{
+   background-color: none;
+   text-decoration:none;
+  } 
+			input[type=submit] {
+              
+               background-color: #4CAF50;
+               color: white;
+               padding: 14px 10px;
+               margin: 8px 2px;
+               border: none;
+               border-radius: 4px;
+               cursor: pointer;
+							
+            }
+		
+			input[type=text]{text-align:center;}
+			input[type=number]{text-align:center;}
+			input[type=date]{text-align:center;}
+		
+		</style>
+		
+	</head>
+	<body>
+		<form action="/log-out" method="POST">
+          <button class="sign">Sign Out</button>
+    </form>
+		<button type='button' class='back'>
+			<a style='color:#fff;' href="/teacher/<%=student._id%>">Back</a>
+		</button>
+		<br>
+<h2 style='margin-top:60px;'>
+	EDIT DETAILS OF TEACHER <%=student.name%>
+</h2>
+
+
+<form action="/teacherdetails/<%=student._id%>?_method=PUT"  method="POST">
+	<div>
+		<h2>NAME:</h2><input type="text"  name="student[name]"  value="<%=student.name%>">
+	</div>
+	<div>
+		<h2>SUBJECT:</h2><input type="text" name="student[subject]"  value="<%=student.subject%>">
+	</div>
+	<div>
+		<h2>DOB:</h2><input type="date"  name="student[dob]"  value="<%=student.dob%>">
+	</div>
+	<div>
+		<h2>FATHER NAME:</h2><input type="text"  name="student[f_name]"  value="<%=student.f_name%>">
+	</div>
+	<div>
+		<h2>MOTHER NAME:</h2><input type="text"  name="student[m_name]"  value="<%=student.m_name%>">
+	</div>
+	<div>
+		<h2>CONTACT NUMBER:</h2><input type="text"  name="student[contact_no]"  value="<%=student.contact_no%>">
+	</div>
+	<div>
+		<h2>SALARY:</h2><input type="text"  name="student[salary]"  value="<%=student.salary%>">
+	</div>
+	<div>
+		<h2>EDUCATION:</h2><input type="text"  name="student[education]"  value="<%=student.education%>">
+	</div>
+	<div>
+		<h2>ADDRESS:</h2><input type="text"  name="student[address]"  value="<%=student.address%>">
+	</div>
+	<div>
+		<input type='submit'>
+	</div>
+	
+</form>
+	</body>
+</html>
